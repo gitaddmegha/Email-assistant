@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+venv/
+.env
+
+# Gmail credentials
+token.pickle
+credentials.json
+
+# Database
+emails.json
+
+# Logs
+*.log
+
+# macOS system files
+.DS_Store
