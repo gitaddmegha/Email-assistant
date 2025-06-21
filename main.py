@@ -10,19 +10,16 @@ import logging
 from datetime import datetime
 from typing import List, Dict
 
-# Add src to path for imports
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
-# Imports
 from src.email.gmail_reader import GmailReader
 from src.priotizer import prioritize_email
 from src.logger import logger
 
 
 def analyze_emails(reader: GmailReader, emails: List[Dict]):
-    """
-    Analyze and process fetched emails using a prioritizer (AI stub)
-    """
+
+    """Analyze and process fetched emails using a prioritizer """
     for email in emails:
         subject = email.get("subject", "No Subject")
         priority = prioritize_email(email)
@@ -43,18 +40,15 @@ def main():
     reader = GmailReader()
 
     try:
-        # Step 1: Fetch and store emails
+        
         emails = reader.fetch_and_store_recent_emails(max_results=5)
         logger.info(f"📨 Total emails fetched: {len(emails)}")
 
         if emails:
-            # Step 2: Analyze them
             analyze_emails(reader, emails)
 
-            # Step 3: Display results
             reader.display_recent_emails(limit=5)
 
-            # Step 4: Show unprocessed
             unprocessed = reader.get_unprocessed_emails()
             logger.info(f"🕵️ Unprocessed emails left: {len(unprocessed)}")
 
