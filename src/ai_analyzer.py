@@ -10,10 +10,10 @@ import logging
 from datetime import datetime, timedelta
 from typing import Optional, List, Dict, Any
 
-# Add src to path for imports
+
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
-# Clean and reliable imports
+
 from src.auth.gmail_auth import authenticate_gmail
 from src.email.gmail_reader import GmailReader
 from src.database.email_db import EmailDatabase
@@ -21,7 +21,7 @@ from src.ai_analyzer import AIAnalyzer
 from src.utils.email_parser import EmailParser
 from src.utils.prioritizer import Prioritizer
 
-# Configure logging
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -152,7 +152,7 @@ class EmailAnalysisApp:
                 print("Invalid option")
 
 def main():
-    print("Starting Email Analysis Application...")
+    print("Starting Email Analysis ...")
     app = EmailAnalysisApp()
     if not app.initialize():
         print("Failed to initialize. Check logs.")
