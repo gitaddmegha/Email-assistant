@@ -13,7 +13,7 @@ def prioritize_email(email_data: Dict) -> str:
     subject = email_data.get("subject", "").lower()
     sender = email_data.get("sender_email", "").lower()
 
-    # Priority rules (customize as needed)
+
     if any(keyword in subject for keyword in ["urgent", "asap", "immediately"]):
         return "high"
     if sender.endswith("@importantclient.com"):
